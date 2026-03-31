@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — FreshMart</title>
+  <meta name="description" content="Contact FreshMart — WhatsApp, phone, email, or visit us in Kanyakumari. We're always happy to help!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <meta name="theme-color" content="#16a34a">
+  <link rel="icon" href="https://placehold.co/32x32/16a34a/ffffff?text=F" type="image/png">
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-logo">🛒 FreshMart</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<div id="announcement-bar">
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>📞 Call us: +91 98765 43210</span>
+      <span>💬 WhatsApp for instant response!</span>
+      <span>🚚 Free delivery on orders above ₹499</span>
+      <span>📞 Call us: +91 98765 43210</span>
+      <span>💬 WhatsApp for instant response!</span>
+      <span>🚚 Free delivery on orders above ₹499</span>
+    </div>
+  </div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span>🛒</span> Fresh<span>Mart</span></a>
+    <div class="nav-search">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" class="search-input" placeholder="Search products…">
+      <div class="search-suggestions"></div>
+    </div>
+    <div class="nav-actions">
+      <a href="offers.html" class="nav-btn"><i class="fas fa-tag"></i> Offers</a>
+      <button class="nav-btn cart-btn" data-open-cart>
+        <i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">0</span>
+      </button>
+      <button id="hamburger-btn" class="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden" style="background:#fff;border-top:1px solid #e5e7eb;padding:.75rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;">
+    <a href="index.html" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;"><i class="fas fa-home" style="color:#16a34a;margin-right:.4rem"></i> Home</a>
+    <a href="products.html" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;"><i class="fas fa-store" style="color:#16a34a;margin-right:.4rem"></i> Products</a>
+    <a href="offers.html" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;"><i class="fas fa-tag" style="color:#16a34a;margin-right:.4rem"></i> Offers</a>
+    <a href="about.html" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;"><i class="fas fa-info-circle" style="color:#16a34a;margin-right:.4rem"></i> About</a>
+    <a href="contact.html" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#16a34a;"><i class="fas fa-phone" style="color:#16a34a;margin-right:.4rem"></i> Contact</a>
+  </div>
+  <div class="nav-categories">
+    <ul class="cat-list">
+      <li><a href="products.html?category=vegetables">🥦 Vegetables</a></li>
+      <li><a href="products.html?category=fruits">🍎 Fruits</a></li>
+      <li><a href="products.html?category=dairy">🥛 Dairy</a></li>
+      <li><a href="products.html?category=grains">🌾 Grains & Staples</a></li>
+      <li><a href="products.html?category=beverages">🧃 Beverages</a></li>
+      <li><a href="products.html?category=snacks">🍿 Snacks</a></li>
+      <li><a href="products.html?category=household">🧴 Household</a></li>
+      <li><a href="products.html?category=eggs-meat">🥚 Eggs & Meat</a></li>
+      <li><a href="offers.html" style="color:#fb923c;font-weight:700;">🔥 Offers</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <h1>Contact Us</h1>
+  <p>We're here to help! Reach us by WhatsApp, phone or email.</p>
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact</span></div>
+</div>
+
+<!-- ── Quick Contact Buttons ── -->
+<section class="section-sm bg-green-light">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;text-align:center;">
+      <button onclick="contactOnWhatsApp()" style="background:#25D366;color:#fff;padding:1.1rem;border-radius:var(--radius);font-weight:700;display:flex;flex-direction:column;align-items:center;gap:.5rem;border:none;cursor:pointer;font-size:.9rem;transition:background .25s;" onmouseover="this.style.background='#1ebe5c'" onmouseout="this.style.background='#25D366'">
+        <i class="fab fa-whatsapp" style="font-size:1.8rem;"></i>
+        Chat on WhatsApp
+        <small style="font-weight:400;opacity:.9;font-size:.75rem;">Fastest response</small>
+      </button>
+      <a href="tel:+919876543210" style="background:var(--primary);color:#fff;padding:1.1rem;border-radius:var(--radius);font-weight:700;display:flex;flex-direction:column;align-items:center;gap:.5rem;font-size:.9rem;transition:background .25s;" onmouseover="this.style.background='var(--green-700)'" onmouseout="this.style.background='var(--primary)'">
+        <i class="fas fa-phone" style="font-size:1.8rem;"></i>
+        Call Us
+        <small style="font-weight:400;opacity:.9;font-size:.75rem;">+91 98765 43210</small>
+      </a>
+      <a href="mailto:hello@freshmart.in" style="background:var(--gray-700);color:#fff;padding:1.1rem;border-radius:var(--radius);font-weight:700;display:flex;flex-direction:column;align-items:center;gap:.5rem;font-size:.9rem;transition:background .25s;" onmouseover="this.style.background='var(--gray-800)'" onmouseout="this.style.background='var(--gray-700)'">
+        <i class="fas fa-envelope" style="font-size:1.8rem;"></i>
+        Email Us
+        <small style="font-weight:400;opacity:.9;font-size:.75rem;">hello@freshmart.in</small>
+      </a>
+      <button onclick="contactOnWhatsApp('Hi FreshMart! I would like to place a bulk order. Please contact me.')" style="background:var(--orange-500);color:#fff;padding:1.1rem;border-radius:var(--radius);font-weight:700;display:flex;flex-direction:column;align-items:center;gap:.5rem;border:none;cursor:pointer;font-size:.9rem;transition:background .25s;" onmouseover="this.style.background='var(--orange-600)'" onmouseout="this.style.background='var(--orange-500)'">
+        <i class="fas fa-boxes" style="font-size:1.8rem;"></i>
+        Bulk Orders
+        <small style="font-weight:400;opacity:.9;font-size:.75rem;">Hotels & Restaurants</small>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact Form + Info ── -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info-card reveal-left">
+        <h3>Get in Touch</h3>
+        <p>We respond to WhatsApp messages within minutes. For other inquiries, we reply within a few hours.</p>
+
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fab fa-whatsapp"></i></div>
+          <div class="contact-item-text">
+            <h4>WhatsApp (Fastest)</h4>
+            <a href="#" onclick="contactOnWhatsApp()">+91 98765 43210</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
+          <div class="contact-item-text">
+            <h4>Phone</h4>
+            <a href="tel:+919876543210">+91 98765 43210</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-item-text">
+            <h4>Email</h4>
+            <a href="mailto:hello@freshmart.in">hello@freshmart.in</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="contact-item-text">
+            <h4>Our Store</h4>
+            <p>12, Market Street, Near Bus Stand,<br>Kanyakumari — 629702, Tamil Nadu</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fas fa-clock"></i></div>
+          <div class="contact-item-text">
+            <h4>Working Hours</h4>
+            <p>Monday – Saturday: 7:00 AM – 9:00 PM<br>Sunday: 8:00 AM – 6:00 PM</p>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div style="margin-top:1.5rem;display:flex;gap:.75rem;">
+          <a href="#" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .25s;" onmouseover="this.style.background='rgba(255,255,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.15)'"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .25s;" onmouseover="this.style.background='rgba(255,255,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.15)'"><i class="fab fa-instagram"></i></a>
+          <a href="#" onclick="contactOnWhatsApp()" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .25s;" onmouseover="this.style.background='rgba(255,255,255,.3)'" onmouseout="this.style.background='rgba(255,255,255,.15)'"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-card reveal-right">
+        <h3 style="font-size:1.15rem;font-weight:700;color:var(--gray-900);margin-bottom:1.25rem;">Send a Message</h3>
+        <form id="contact-form">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" name="name" placeholder="Rajan Kumar" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" name="phone" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select name="subject">
+              <option>General Inquiry</option>
+              <option>Order Help</option>
+              <option>Bulk Order / Corporate</option>
+              <option>Product Request</option>
+              <option>Feedback / Complaint</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message *</label>
+            <textarea name="message" rows="5" placeholder="Tell us how we can help you…" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <i class="fab fa-whatsapp" style="margin-right:.4rem"></i> Send via WhatsApp
+          </button>
+          <p style="font-size:.75rem;color:var(--gray-400);margin-top:.6rem;text-align:center;">Your message will open in WhatsApp for instant response.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Map ── -->
+<section style="height:380px;background:var(--gray-100);">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15917.12345!2d77.5385!3d8.0883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0402f46d40bf89%3A0x6a70b4f57d67d36b!2sKanyakumari%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1234567890"
+    width="100%"
+    height="100%"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="FreshMart Location">
+  </iframe>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section bg-gray-light">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+    <div style="max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:.75rem;">
+      <details class="reveal" style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius);overflow:hidden;">
+        <summary style="padding:1rem 1.25rem;font-weight:700;font-size:.92rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--gray-800);">
+          How do I place an order? <i class="fas fa-chevron-down" style="font-size:.75rem;color:var(--primary);transition:transform .25s;"></i>
+        </summary>
+        <div style="padding:.75rem 1.25rem 1.25rem;font-size:.88rem;color:var(--gray-600);line-height:1.7;border-top:1px solid var(--gray-100);">
+          Browse products on our website, add items to your cart, then click "Order on WhatsApp". Your entire cart list is automatically sent to our WhatsApp number. We confirm and schedule delivery within minutes.
+        </div>
+      </details>
+      <details class="reveal" style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius);overflow:hidden;">
+        <summary style="padding:1rem 1.25rem;font-weight:700;font-size:.92rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--gray-800);">
+          What areas do you deliver to? <i class="fas fa-chevron-down" style="font-size:.75rem;color:var(--primary);"></i>
+        </summary>
+        <div style="padding:.75rem 1.25rem 1.25rem;font-size:.88rem;color:var(--gray-600);line-height:1.7;border-top:1px solid var(--gray-100);">
+          We currently deliver to Kanyakumari, Nagercoil, Colachel, Marthandam and surrounding areas within 20km. Contact us on WhatsApp to confirm if we deliver to your location.
+        </div>
+      </details>
+      <details class="reveal" style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius);overflow:hidden;">
+        <summary style="padding:1rem 1.25rem;font-weight:700;font-size:.92rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--gray-800);">
+          What is the delivery charge? <i class="fas fa-chevron-down" style="font-size:.75rem;color:var(--primary);"></i>
+        </summary>
+        <div style="padding:.75rem 1.25rem 1.25rem;font-size:.88rem;color:var(--gray-600);line-height:1.7;border-top:1px solid var(--gray-100);">
+          Delivery is ₹40 for orders below ₹499. Orders above ₹499 get FREE delivery! We aim to cover your home within 3–5 hours of order confirmation.
+        </div>
+      </details>
+      <details class="reveal" style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius);overflow:hidden;">
+        <summary style="padding:1rem 1.25rem;font-weight:700;font-size:.92rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--gray-800);">
+          What if I receive something not fresh? <i class="fas fa-chevron-down" style="font-size:.75rem;color:var(--primary);"></i>
+        </summary>
+        <div style="padding:.75rem 1.25rem 1.25rem;font-size:.88rem;color:var(--gray-600);line-height:1.7;border-top:1px solid var(--gray-100);">
+          Your satisfaction is our priority! If any product is not fresh or not as expected, simply WhatsApp us a photo and we will replace it at no extra charge or give you a full refund. No questions asked.
+        </div>
+      </details>
+      <details class="reveal" style="background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--radius);overflow:hidden;">
+        <summary style="padding:1rem 1.25px 1rem 1.25rem;font-weight:700;font-size:.92rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--gray-800);">
+          Do you accept bulk / hotel orders? <i class="fas fa-chevron-down" style="font-size:.75rem;color:var(--primary);"></i>
+        </summary>
+        <div style="padding:.75rem 1.25rem 1.25rem;font-size:.88rem;color:var(--gray-600);line-height:1.7;border-top:1px solid var(--gray-100);">
+          Yes! We serve restaurants, hotels, caterers and corporate clients with special bulk pricing. Contact us on WhatsApp and mention you need a bulk quote — we'll get back to you within the hour.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo"><span>🛒</span> Fresh<span style="color:var(--orange-500)">Mart</span></div>
+      <p>Your neighbourhood supermarket, now online.</p>
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" onclick="contactOnWhatsApp()"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">All Products</a></li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+919876543210"><i class="fas fa-phone" style="margin-right:.4rem;color:var(--green-400)"></i> +91 98765 43210</a></li>
+        <li><a href="mailto:hello@freshmart.in"><i class="fas fa-envelope" style="margin-right:.4rem;color:var(--green-400)"></i> hello@freshmart.in</a></li>
+        <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right:.4rem;color:var(--green-400)"></i> Kanyakumari — 629702</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 FreshMart. All rights reserved.</span>
+    <span><a href="#">Privacy Policy</a> · <a href="#">Terms</a></span>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <h3><i class="fas fa-shopping-cart" style="margin-right:.4rem;color:var(--primary)"></i> Your Cart</h3>
+    <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cart-items-list"></div>
+  <div class="cart-footer">
+    <div class="cart-summary">
+      <div class="cart-summary-row"><span>Subtotal</span><span id="cart-subtotal">₹0</span></div>
+      <div class="cart-summary-row"><span>Delivery</span><span id="cart-delivery">₹40</span></div>
+      <div class="cart-summary-row total"><span>Total</span><span id="cart-total">₹40</span></div>
+    </div>
+    <button class="btn-whatsapp" id="btn-order-whatsapp"><i class="fab fa-whatsapp" style="font-size:1.1rem"></i> Order on WhatsApp</button>
+    <button class="btn-clear-cart" id="btn-clear-cart">Clear Cart</button>
+  </div>
+</div>
+<div class="wa-float">
+  <div class="wa-tooltip">Chat with us!</div>
+  <a href="#" class="wa-bubble" id="wa-float-btn"><i class="fab fa-whatsapp"></i></a>
+</div>
+<button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+<div class="toast" id="toast"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+[start]
+cmd = "npx serve . -p ${PORT:-3000} -s"

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offers & Deals — FreshMart</title>
+  <meta name="description" content="Latest offers, discounts and deals at FreshMart. Fresh groceries at lowest prices.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <meta name="theme-color" content="#16a34a">
+  <link rel="icon" href="https://placehold.co/32x32/16a34a/ffffff?text=F" type="image/png">
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-logo">🛒 FreshMart</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<div id="announcement-bar">
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>🔥 This week only — Up to 40% off on selected products!</span>
+      <span>🚚 Free delivery on orders above ₹499</span>
+      <span>📱 Order on WhatsApp — Instant Confirmation</span>
+      <span>🔥 This week only — Up to 40% off on selected products!</span>
+      <span>🚚 Free delivery on orders above ₹499</span>
+      <span>📱 Order on WhatsApp — Instant Confirmation</span>
+    </div>
+  </div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span>🛒</span> Fresh<span>Mart</span></a>
+    <div class="nav-search">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" class="search-input" placeholder="Search products…">
+      <div class="search-suggestions"></div>
+    </div>
+    <div class="nav-actions">
+      <a href="offers.html" class="nav-btn" style="color:var(--primary);font-weight:700;"><i class="fas fa-tag"></i> Offers</a>
+      <button class="nav-btn cart-btn" data-open-cart>
+        <i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">0</span>
+      </button>
+      <button id="hamburger-btn" class="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden" style="background:#fff;border-top:1px solid #e5e7eb;padding:.75rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;">
+    <a href="index.html" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;"><i class="fas fa-home" style="color:#16a34a;margin-right:.4rem"></i> Home</a>
+    <a href="products.html" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;"><i class="fas fa-store" style="color:#16a34a;margin-right:.4rem"></i> Products</a>
+    <a href="offers.html" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#16a34a;"><i class="fas fa-tag" style="color:#16a34a;margin-right:.4rem"></i> Offers</a>
+    <a href="about.html" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;"><i class="fas fa-info-circle" style="color:#16a34a;margin-right:.4rem"></i> About</a>
+    <a href="contact.html" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;"><i class="fas fa-phone" style="color:#16a34a;margin-right:.4rem"></i> Contact</a>
+  </div>
+  <div class="nav-categories">
+    <ul class="cat-list">
+      <li><a href="products.html?category=vegetables">🥦 Vegetables</a></li>
+      <li><a href="products.html?category=fruits">🍎 Fruits</a></li>
+      <li><a href="products.html?category=dairy">🥛 Dairy</a></li>
+      <li><a href="products.html?category=grains">🌾 Grains & Staples</a></li>
+      <li><a href="products.html?category=beverages">🧃 Beverages</a></li>
+      <li><a href="products.html?category=snacks">🍿 Snacks</a></li>
+      <li><a href="products.html?category=household">🧴 Household</a></li>
+      <li><a href="products.html?category=eggs-meat">🥚 Eggs & Meat</a></li>
+      <li><a href="offers.html" style="color:#fb923c;font-weight:700;">🔥 Offers</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Page Hero with Countdown -->
+<div class="page-hero" style="padding-bottom:2rem;">
+  <h1>🔥 Hot Deals & Offers</h1>
+  <p>Limited time offers — grab them before they're gone!</p>
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Offers</span></div>
+
+  <!-- Countdown -->
+  <div style="margin-top:1.5rem;">
+    <p style="font-size:.85rem;opacity:.75;margin-bottom:.75rem;">Offers expire in:</p>
+    <div class="countdown" style="justify-content:center;">
+      <div class="countdown-unit"><span class="number" id="timer-days">00</span><div class="label">Days</div></div>
+      <div class="countdown-unit" style="display:flex;align-items:center;padding-bottom:1.2rem;color:rgba(255,255,255,.6);font-size:1.4rem;font-weight:700;">:</div>
+      <div class="countdown-unit"><span class="number" id="timer-hours">00</span><div class="label">Hours</div></div>
+      <div class="countdown-unit" style="display:flex;align-items:center;padding-bottom:1.2rem;color:rgba(255,255,255,.6);font-size:1.4rem;font-weight:700;">:</div>
+      <div class="countdown-unit"><span class="number" id="timer-mins">00</span><div class="label">Mins</div></div>
+      <div class="countdown-unit" style="display:flex;align-items:center;padding-bottom:1.2rem;color:rgba(255,255,255,.6);font-size:1.4rem;font-weight:700;">:</div>
+      <div class="countdown-unit"><span class="number" id="timer-secs">00</span><div class="label">Secs</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Weekly Offers ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">This Week</div>
+      <h2 class="section-title">Weekly Super Deals</h2>
+      <p class="section-sub">Fresh deals every week. Order on WhatsApp to claim instantly.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.25rem;">
+      <!-- Offer 1 -->
+      <div class="offer-full-card reveal">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1518843875459-f738682238a6?w=500&q=80" alt="Fruits Combo" style="width:100%;height:200px;object-fit:cover;">
+          <span class="product-badge sale" style="position:absolute;top:.75rem;left:.75rem;">30% OFF</span>
+        </div>
+        <div class="card-body" style="padding:1.25rem;">
+          <div class="offer-expiry"><i class="fas fa-clock" style="margin-right:.25rem;color:var(--orange-500)"></i> Expires this Sunday</div>
+          <div class="offer-title">Summer Fruits Combo</div>
+          <div class="offer-desc">Get 2 kg of any seasonal fruits (mango, watermelon, papaya) and get 500g FREE. Choose your favourites!</div>
+          <span class="offer-discount">Save up to ₹75</span>
+          <button class="btn-claim" onclick="contactOnWhatsApp('Hi FreshMart! I want to claim the Summer Fruits Combo offer — 2kg fruits + 500g free. Please confirm!')">
+            <i class="fab fa-whatsapp"></i> Claim on WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <!-- Offer 2 -->
+      <div class="offer-full-card reveal">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=500&q=80" alt="Dairy Pack" style="width:100%;height:200px;object-fit:cover;">
+          <span class="product-badge sale" style="position:absolute;top:.75rem;left:.75rem;">20% OFF</span>
+        </div>
+        <div class="card-body" style="padding:1.25rem;">
+          <div class="offer-expiry"><i class="fas fa-clock" style="margin-right:.25rem;color:var(--orange-500)"></i> Expires this Saturday</div>
+          <div class="offer-title">Dairy Saver Combo</div>
+          <div class="offer-desc">1L Milk + 500g Curd + 200g Paneer for just ₹180 (MRP ₹225). Save ₹45 on your daily dairy needs!</div>
+          <span class="offer-discount">Save ₹45</span>
+          <button class="btn-claim" onclick="contactOnWhatsApp('Hi FreshMart! I want to claim the Dairy Saver Combo — Milk + Curd + Paneer for ₹180. Please confirm!')">
+            <i class="fab fa-whatsapp"></i> Claim on WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <!-- Offer 3 -->
+      <div class="offer-full-card reveal">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500&q=80" alt="Grains Offer" style="width:100%;height:200px;object-fit:cover;">
+          <span class="product-badge sale" style="position:absolute;top:.75rem;left:.75rem;">15% OFF</span>
+        </div>
+        <div class="card-body" style="padding:1.25rem;">
+          <div class="offer-expiry"><i class="fas fa-clock" style="margin-right:.25rem;color:var(--orange-500)"></i> Limited stock</div>
+          <div class="offer-title">Bulk Grains Bundle</div>
+          <div class="offer-desc">5kg Basmati Rice + 5kg Atta + 2kg Toor Dal for ₹890 (MRP ₹1050). Great for monthly stocking!</div>
+          <span class="offer-discount">Save ₹160</span>
+          <button class="btn-claim" onclick="contactOnWhatsApp('Hi FreshMart! I want the Bulk Grains Bundle — 5kg Rice + 5kg Atta + 2kg Dal for ₹890. Please confirm!')">
+            <i class="fab fa-whatsapp"></i> Claim on WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <!-- Offer 4 -->
+      <div class="offer-full-card reveal">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=500&q=80" alt="Vegetables" style="width:100%;height:200px;object-fit:cover;">
+          <span class="product-badge" style="position:absolute;top:.75rem;left:.75rem;background:#16a34a;">FRESH DEAL</span>
+        </div>
+        <div class="card-body" style="padding:1.25rem;">
+          <div class="offer-expiry"><i class="fas fa-clock" style="margin-right:.25rem;color:var(--orange-500)"></i> Daily fresh stock</div>
+          <div class="offer-title">Morning Fresh Vegetables</div>
+          <div class="offer-desc">Tomatoes, Spinach, Onions, Carrots, Beans — 2kg assorted vegetables for just ₹120. Handpicked morning fresh!</div>
+          <span class="offer-discount">Save ₹35</span>
+          <button class="btn-claim" onclick="contactOnWhatsApp('Hi FreshMart! I want the Morning Fresh Vegetables — 2kg assorted veggies for ₹120. Please confirm!')">
+            <i class="fab fa-whatsapp"></i> Claim on WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <!-- Offer 5 -->
+      <div class="offer-full-card reveal">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1491724450926-96dae66f2f95?w=500&q=80" alt="Eggs" style="width:100%;height:200px;object-fit:cover;">
+          <span class="product-badge sale" style="position:absolute;top:.75rem;left:.75rem;">BUY 2 GET 1</span>
+        </div>
+        <div class="card-body" style="padding:1.25rem;">
+          <div class="offer-expiry"><i class="fas fa-clock" style="margin-right:.25rem;color:var(--orange-500)"></i> Weekends only</div>
+          <div class="offer-title">Farm Fresh Eggs Offer</div>
+          <div class="offer-desc">Buy 2 dozen farm-fresh eggs (₹90 each) and get 1 dozen FREE! Perfect for the whole week.</div>
+          <span class="offer-discount">Save ₹90</span>
+          <button class="btn-claim" onclick="contactOnWhatsApp('Hi FreshMart! I want the Eggs Buy 2 Get 1 Free offer. Please confirm availability!')">
+            <i class="fab fa-whatsapp"></i> Claim on WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <!-- Offer 6 -->
+      <div class="offer-full-card reveal">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=500&q=80" alt="Snacks" style="width:100%;height:200px;object-fit:cover;">
+          <span class="product-badge sale" style="position:absolute;top:.75rem;left:.75rem;">FIRST ORDER</span>
+        </div>
+        <div class="card-body" style="padding:1.25rem;">
+          <div class="offer-expiry"><i class="fas fa-clock" style="margin-right:.25rem;color:var(--orange-500)"></i> For new customers</div>
+          <div class="offer-title">Welcome 10% Off</div>
+          <div class="offer-desc">First-time customers get 10% off on any order above ₹300! Use code FRESH10 when ordering on WhatsApp.</div>
+          <span class="offer-discount">Code: FRESH10</span>
+          <button class="btn-claim" onclick="contactOnWhatsApp('Hi FreshMart! I am a new customer and want to use code FRESH10 for 10% off. Let me place my first order!')">
+            <i class="fab fa-whatsapp"></i> Claim on WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Coupon Section ── -->
+<section class="section-sm bg-green-light">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Promo Codes</div>
+      <h2 class="section-title">Active Coupon Codes</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;">
+      <div class="reveal" style="background:var(--white);border:2px dashed var(--primary);border-radius:var(--radius);padding:1.25rem;display:flex;align-items:center;gap:1rem;">
+        <div style="background:var(--green-100);color:var(--primary);padding:.75rem 1rem;border-radius:var(--radius-sm);font-weight:900;font-size:1rem;letter-spacing:.05em;white-space:nowrap;">FRESH10</div>
+        <div><p style="font-size:.88rem;font-weight:600;color:var(--gray-800)">10% off on first order</p><p style="font-size:.75rem;color:var(--gray-400)">Min order: ₹300 · New customers</p></div>
+      </div>
+      <div class="reveal" style="background:var(--white);border:2px dashed var(--orange-500);border-radius:var(--radius);padding:1.25rem;display:flex;align-items:center;gap:1rem;">
+        <div style="background:#fff7ed;color:var(--orange-500);padding:.75rem 1rem;border-radius:var(--radius-sm);font-weight:900;font-size:1rem;letter-spacing:.05em;white-space:nowrap;">FREEDEL</div>
+        <div><p style="font-size:.88rem;font-weight:600;color:var(--gray-800)">Free delivery</p><p style="font-size:.75rem;color:var(--gray-400)">Min order: ₹300 · All customers</p></div>
+      </div>
+      <div class="reveal" style="background:var(--white);border:2px dashed #8b5cf6;border-radius:var(--radius);padding:1.25rem;display:flex;align-items:center;gap:1rem;">
+        <div style="background:#f5f3ff;color:#7c3aed;padding:.75rem 1rem;border-radius:var(--radius-sm);font-weight:900;font-size:1rem;letter-spacing:.05em;white-space:nowrap;">BULK15</div>
+        <div><p style="font-size:.88rem;font-weight:600;color:var(--gray-800)">15% off on bulk orders</p><p style="font-size:.75rem;color:var(--gray-400)">Min order: ₹800 · All customers</p></div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:1.25rem;font-size:.82rem;color:var(--gray-400)">Share the coupon code when ordering on WhatsApp. Offer subject to availability.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo"><span>🛒</span> Fresh<span style="color:var(--orange-500)">Mart</span></div>
+      <p>Your neighbourhood supermarket, now online.</p>
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" onclick="contactOnWhatsApp()"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">All Products</a></li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+919876543210"><i class="fas fa-phone" style="margin-right:.4rem;color:var(--green-400)"></i> +91 98765 43210</a></li>
+        <li><a href="mailto:hello@freshmart.in"><i class="fas fa-envelope" style="margin-right:.4rem;color:var(--green-400)"></i> hello@freshmart.in</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 FreshMart. All rights reserved.</span>
+    <span><a href="#">Privacy Policy</a> · <a href="#">Terms</a></span>
+  </div>
+</footer>
+
+<!-- Cart Drawer -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <h3><i class="fas fa-shopping-cart" style="margin-right:.4rem;color:var(--primary)"></i> Your Cart</h3>
+    <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cart-items-list"></div>
+  <div class="cart-footer">
+    <div class="cart-summary">
+      <div class="cart-summary-row"><span>Subtotal</span><span id="cart-subtotal">₹0</span></div>
+      <div class="cart-summary-row"><span>Delivery</span><span id="cart-delivery">₹40</span></div>
+      <div class="cart-summary-row total"><span>Total</span><span id="cart-total">₹40</span></div>
+    </div>
+    <button class="btn-whatsapp" id="btn-order-whatsapp"><i class="fab fa-whatsapp" style="font-size:1.1rem"></i> Order on WhatsApp</button>
+    <button class="btn-clear-cart" id="btn-clear-cart">Clear Cart</button>
+  </div>
+</div>
+
+<div class="wa-float">
+  <div class="wa-tooltip">Chat with us!</div>
+  <a href="#" class="wa-bubble" id="wa-float-btn"><i class="fab fa-whatsapp"></i></a>
+</div>
+<button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+<div class="toast" id="toast"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

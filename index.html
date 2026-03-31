@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreshMart — Fresh Groceries Delivered to Your Door</title>
+  <meta name="description" content="FreshMart — Shop fresh vegetables, fruits, dairy, grains and more. Order online via WhatsApp. Same-day delivery in Kanyakumari.">
+  <meta name="keywords" content="supermarket, fresh groceries, vegetables, fruits, online grocery, WhatsApp order, Kanyakumari">
+
+  <!-- OG -->
+  <meta property="og:title" content="FreshMart — Fresh Groceries Online">
+  <meta property="og:description" content="Order fresh groceries on WhatsApp. Same-day delivery!">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#16a34a">
+  <link rel="icon" href="https://placehold.co/32x32/16a34a/ffffff?text=F" type="image/png">
+</head>
+<body>
+
+<!-- Page Loader -->
+<div id="page-loader">
+  <div class="loader-logo">🛒 FreshMart</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<!-- ── Announcement Bar ── -->
+<div id="announcement-bar">
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>🚚 Free delivery on orders above ₹499</span>
+      <span>🌿 100% Fresh & Organic Products</span>
+      <span>📱 Order on WhatsApp — Instant Confirmation</span>
+      <span>⏰ Same-day delivery before 7 PM</span>
+      <span>🎁 Get 10% off on first order — Use code FRESH10</span>
+      <span>🚚 Free delivery on orders above ₹499</span>
+      <span>🌿 100% Fresh & Organic Products</span>
+      <span>📱 Order on WhatsApp — Instant Confirmation</span>
+      <span>⏰ Same-day delivery before 7 PM</span>
+      <span>🎁 Get 10% off on first order — Use code FRESH10</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Navbar ── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <span>🛒</span> Fresh<span>Mart</span>
+    </a>
+
+    <!-- Search -->
+    <div class="nav-search">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" class="search-input" placeholder="Search vegetables, fruits, dairy…">
+      <div class="search-suggestions"></div>
+    </div>
+
+    <!-- Actions -->
+    <div class="nav-actions">
+      <a href="offers.html" class="nav-btn"><i class="fas fa-tag"></i> <span class="hidden md:inline">Offers</span></a>
+      <button class="nav-btn cart-btn" data-open-cart>
+        <i class="fas fa-shopping-cart"></i>
+        <span>Cart</span>
+        <span id="cart-count">0</span>
+      </button>
+      <button id="hamburger-btn" class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Search -->
+  <div class="mobile-search-wrap" style="display:none;" id="mobile-search">
+    <div class="nav-search">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" class="search-input" placeholder="Search products…">
+      <div class="search-suggestions"></div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden" style="background:#fff;border-top:1px solid #e5e7eb;padding:.75rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;">
+    <a href="index.html" class="nav-link" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;display:flex;align-items:center;gap:.5rem;"><i class="fas fa-home" style="color:#16a34a"></i> Home</a>
+    <a href="products.html" class="nav-link" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;display:flex;align-items:center;gap:.5rem;"><i class="fas fa-store" style="color:#16a34a"></i> Products</a>
+    <a href="offers.html" class="nav-link" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;display:flex;align-items:center;gap:.5rem;"><i class="fas fa-tag" style="color:#16a34a"></i> Offers</a>
+    <a href="about.html" class="nav-link" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;display:flex;align-items:center;gap:.5rem;"><i class="fas fa-info-circle" style="color:#16a34a"></i> About</a>
+    <a href="contact.html" class="nav-link" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;display:flex;align-items:center;gap:.5rem;"><i class="fas fa-phone" style="color:#16a34a"></i> Contact</a>
+  </div>
+
+  <!-- Category Nav -->
+  <div class="nav-categories">
+    <ul class="cat-list">
+      <li><a href="products.html?category=vegetables" class="nav-link">🥦 Vegetables</a></li>
+      <li><a href="products.html?category=fruits" class="nav-link">🍎 Fruits</a></li>
+      <li><a href="products.html?category=dairy" class="nav-link">🥛 Dairy</a></li>
+      <li><a href="products.html?category=grains" class="nav-link">🌾 Grains & Staples</a></li>
+      <li><a href="products.html?category=beverages" class="nav-link">🧃 Beverages</a></li>
+      <li><a href="products.html?category=snacks" class="nav-link">🍿 Snacks</a></li>
+      <li><a href="products.html?category=household" class="nav-link">🧴 Household</a></li>
+      <li><a href="products.html?category=eggs-meat" class="nav-link">🥚 Eggs & Meat</a></li>
+      <li><a href="offers.html" class="nav-link" style="color:#fb923c;font-weight:700;">🔥 Offers</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero Slider ── -->
+<section id="hero">
+  <div class="hero-slides">
+    <!-- Slide 1 -->
+    <div class="hero-slide">
+      <img class="hero-bg" src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=1400&q=80" alt="Fresh Vegetables">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-badge">🌿 100% Fresh & Organic</span>
+        <h2>Farm-Fresh Vegetables<br>at Your Doorstep</h2>
+        <p>Order fresh produce directly from local farms. Delivered same day, guaranteed fresh or full refund.</p>
+        <a href="products.html?category=vegetables" class="btn-hero"><i class="fas fa-leaf"></i> Shop Vegetables</a>
+        <a href="#categories" class="btn-hero btn-hero-outline">Browse All</a>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="hero-slide">
+      <img class="hero-bg" src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=1400&q=80" alt="Fresh Fruits">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-badge">🍎 Summer Special</span>
+        <h2>Juicy Fruits &<br>Tropical Delights</h2>
+        <p>Alphonso mangoes, watermelons, and 50+ seasonal fruits. Handpicked daily for maximum freshness.</p>
+        <a href="products.html?category=fruits" class="btn-hero"><i class="fas fa-apple-alt"></i> Shop Fruits</a>
+        <a href="offers.html" class="btn-hero btn-hero-outline">See Offers</a>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="hero-slide">
+      <img class="hero-bg" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=80" alt="Grocery Shopping">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-badge">📱 Order on WhatsApp</span>
+        <h2>Add to Cart &<br>Order on WhatsApp</h2>
+        <p>No app download needed. Select products, click "Order on WhatsApp" and we deliver within hours.</p>
+        <button class="btn-hero" data-open-cart><i class="fab fa-whatsapp"></i> Order Now</button>
+        <a href="products.html" class="btn-hero btn-hero-outline">View All Products</a>
+      </div>
+    </div>
+  </div>
+  <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+  <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+  <div class="slider-dots">
+    <div class="slider-dot active"></div>
+    <div class="slider-dot"></div>
+    <div class="slider-dot"></div>
+  </div>
+</section>
+
+<!-- ── Stats Bar ── -->
+<section style="background:var(--green-700);color:#fff;padding:1.25rem 1.5rem;">
+  <div class="container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;text-align:center;">
+    <div><div style="font-size:1.5rem;font-weight:800;">2000+</div><div style="font-size:.78rem;opacity:.8;">Happy Customers</div></div>
+    <div><div style="font-size:1.5rem;font-weight:800;">500+</div><div style="font-size:.78rem;opacity:.8;">Products</div></div>
+    <div><div style="font-size:1.5rem;font-weight:800;">Same Day</div><div style="font-size:.78rem;opacity:.8;">Delivery</div></div>
+    <div><div style="font-size:1.5rem;font-weight:800;">100%</div><div style="font-size:.78rem;opacity:.8;">Fresh Guaranteed</div></div>
+  </div>
+</section>
+
+<!-- ── Categories ── -->
+<section id="categories" class="section bg-green-light">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Shop by Category</div>
+      <h2 class="section-title">What Are You Looking For?</h2>
+      <p class="section-sub">From farm-fresh vegetables to pantry staples — everything in one place.</p>
+    </div>
+    <div class="category-grid">
+      <a href="products.html?category=vegetables" class="category-card reveal">
+        <span class="category-icon">🥦</span>
+        <h3>Vegetables</h3>
+        <p>50+ varieties</p>
+      </a>
+      <a href="products.html?category=fruits" class="category-card reveal">
+        <span class="category-icon">🍎</span>
+        <h3>Fruits</h3>
+        <p>Seasonal picks</p>
+      </a>
+      <a href="products.html?category=dairy" class="category-card reveal">
+        <span class="category-icon">🥛</span>
+        <h3>Dairy</h3>
+        <p>Milk, curd, paneer</p>
+      </a>
+      <a href="products.html?category=grains" class="category-card reveal">
+        <span class="category-icon">🌾</span>
+        <h3>Grains & Dal</h3>
+        <p>Rice, atta, pulses</p>
+      </a>
+      <a href="products.html?category=beverages" class="category-card reveal">
+        <span class="category-icon">🧃</span>
+        <h3>Beverages</h3>
+        <p>Juices, tea, coffee</p>
+      </a>
+      <a href="products.html?category=snacks" class="category-card reveal">
+        <span class="category-icon">🍿</span>
+        <h3>Snacks</h3>
+        <p>Healthy munchies</p>
+      </a>
+      <a href="products.html?category=household" class="category-card reveal">
+        <span class="category-icon">🧴</span>
+        <h3>Household</h3>
+        <p>Oils, cleaning</p>
+      </a>
+      <a href="products.html?category=eggs-meat" class="category-card reveal">
+        <span class="category-icon">🥚</span>
+        <h3>Eggs & Meat</h3>
+        <p>Farm fresh</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Featured Products ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Today's Picks</div>
+      <h2 class="section-title">Featured Products</h2>
+      <p class="section-sub">Hand-selected fresh arrivals at the best prices today.</p>
+    </div>
+    <div class="products-grid" id="featured-products">
+      <!-- Rendered by JS -->
+    </div>
+    <div class="text-center" style="margin-top:2rem;">
+      <a href="products.html" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--primary);color:#fff;padding:.75rem 2rem;border-radius:2rem;font-weight:700;font-size:.9rem;transition:background .25s ease;" onmouseover="this.style.background='var(--green-700)'" onmouseout="this.style.background='var(--primary)'">
+        <i class="fas fa-store"></i> View All Products
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Offers Banner ── -->
+<section class="section-sm bg-gray-light">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Hot Deals</div>
+      <h2 class="section-title">Today's Best Offers</h2>
+    </div>
+    <div class="offers-banner">
+      <div class="offer-card reveal-left">
+        <img class="offer-card-bg" src="https://images.unsplash.com/photo-1518843875459-f738682238a6?w=600&q=80" alt="Fruits Offer">
+        <div class="offer-card-overlay"></div>
+        <div class="offer-card-content">
+          <span class="offer-tag">Limited Time</span>
+          <h3>Fresh Fruits Combo</h3>
+          <p>Buy 2 kg any fruits — get 500g FREE!</p>
+          <a href="products.html?category=fruits" class="btn-offer"><i class="fas fa-arrow-right"></i> Shop Now</a>
+        </div>
+      </div>
+      <div class="offer-card reveal">
+        <img class="offer-card-bg" src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=600&q=80" alt="Dairy Offer">
+        <div class="offer-card-overlay" style="background:linear-gradient(135deg,rgba(30,58,138,.8),rgba(30,58,138,.4))"></div>
+        <div class="offer-card-content">
+          <span class="offer-tag" style="background:#3b82f6">Week Special</span>
+          <h3>Dairy Saver Pack</h3>
+          <p>Milk + Curd + Paneer — Save 20% on combo</p>
+          <a href="products.html?category=dairy" class="btn-offer"><i class="fas fa-arrow-right"></i> Grab Deal</a>
+        </div>
+      </div>
+      <div class="offer-card reveal-right">
+        <img class="offer-card-bg" src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&q=80" alt="Grains Offer">
+        <div class="offer-card-overlay" style="background:linear-gradient(135deg,rgba(120,53,15,.8),rgba(120,53,15,.4))"></div>
+        <div class="offer-card-content">
+          <span class="offer-tag" style="background:#b45309">Bulk Savings</span>
+          <h3>Grains & Staples</h3>
+          <p>5kg+ orders get extra 15% off on all dals & rice</p>
+          <a href="products.html?category=grains" class="btn-offer"><i class="fas fa-arrow-right"></i> Save Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Why Choose Us ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Why FreshMart</div>
+      <h2 class="section-title">The FreshMart Difference</h2>
+      <p class="section-sub">We're committed to bringing you the freshest groceries with the most convenient ordering experience.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+        <h3>100% Fresh Guarantee</h3>
+        <p>All products sourced fresh daily from local farms. Not fresh? Full refund, no questions asked.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fas fa-shipping-fast"></i></div>
+        <h3>Same-Day Delivery</h3>
+        <p>Order before 2 PM and receive your groceries the same day. Delivery by 7 PM guaranteed.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fab fa-whatsapp"></i></div>
+        <h3>WhatsApp Ordering</h3>
+        <p>No app download needed. Build your cart, order on WhatsApp. Instant confirmation.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fas fa-tags"></i></div>
+        <h3>Best Prices</h3>
+        <p>We source directly from farms — cutting out the middlemen to save you money every day.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Safe & Hygienic</h3>
+        <p>All products handled with food-safety protocols. Sealed packaging for dairy and meat.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fas fa-undo"></i></div>
+        <h3>Easy Returns</h3>
+        <p>Not happy? Return the product during delivery. Instant refund or replacement offered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── How to Order ── -->
+<section class="section-sm" style="background:var(--green-50);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Easy as 1-2-3</div>
+      <h2 class="section-title">How to Order</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;text-align:center;position:relative;">
+      <div class="reveal" style="padding:1.5rem;">
+        <div style="width:60px;height:60px;border-radius:50%;background:var(--primary);color:#fff;font-size:1.4rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">1</div>
+        <h3 style="font-weight:700;margin-bottom:.4rem;">Browse Products</h3>
+        <p style="font-size:.85rem;color:var(--gray-500);">Explore our catalogue and click "Add to Cart" on products you need.</p>
+      </div>
+      <div class="reveal" style="padding:1.5rem;">
+        <div style="width:60px;height:60px;border-radius:50%;background:var(--primary);color:#fff;font-size:1.4rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">2</div>
+        <h3 style="font-weight:700;margin-bottom:.4rem;">Review Your Cart</h3>
+        <p style="font-size:.85rem;color:var(--gray-500);">Click the cart icon, review items and quantities, adjust as needed.</p>
+      </div>
+      <div class="reveal" style="padding:1.5rem;">
+        <div style="width:60px;height:60px;border-radius:50%;background:var(--primary);color:#fff;font-size:1.4rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">3</div>
+        <h3 style="font-weight:700;margin-bottom:.4rem;">Order on WhatsApp</h3>
+        <p style="font-size:.85rem;color:var(--gray-500);">Tap "Order on WhatsApp" — your cart is sent automatically. We confirm and deliver!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Testimonials ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">What Customers Say</div>
+      <h2 class="section-title">Loved by 2000+ Families</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <p class="testimonial-text">FreshMart has completely changed how our family shops for groceries. The vegetables are always fresh and the WhatsApp ordering is so convenient. Delivery is always on time!</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">P</div>
+          <div>
+            <div class="author-name">Priya Raman</div>
+            <div class="author-location">⭐⭐⭐⭐⭐ · Nagercoil</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <p class="testimonial-text">I love the quality of fruits here. The Alphonso mangoes were absolutely divine. Best prices in the area and delivery was within 2 hours of ordering on WhatsApp!</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">A</div>
+          <div>
+            <div class="author-name">Arjun Selvam</div>
+            <div class="author-location">⭐⭐⭐⭐⭐ · Kanyakumari</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <p class="testimonial-text">As a working mom, FreshMart is a lifesaver. I order every week on WhatsApp and everything is delivered fresh to my door. The paneer and milk quality is outstanding.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">M</div>
+          <div>
+            <div class="author-name">Meena Krishnan</div>
+            <div class="author-location">⭐⭐⭐⭐⭐ · Colachel</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Newsletter ── -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="reveal">
+      <h2>Get Exclusive Offers on WhatsApp 📱</h2>
+      <p>Subscribe to our newsletter for weekly deals, seasonal offers and new arrivals.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit" class="btn-subscribe">Subscribe & Save</button>
+      </form>
+      <p style="font-size:.75rem;opacity:.7;margin-top:.75rem;">By subscribing you agree to receive our newsletter. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo"><span>🛒</span> Fresh<span style="color:var(--orange-500)">Mart</span></div>
+      <p>Your neighbourhood supermarket, now online. Fresh groceries delivered same day with a smile.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" aria-label="WhatsApp" onclick="contactOnWhatsApp()"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">All Products</a></li>
+        <li><a href="offers.html">Offers & Deals</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="products.html?category=vegetables">Vegetables</a></li>
+        <li><a href="products.html?category=fruits">Fruits</a></li>
+        <li><a href="products.html?category=dairy">Dairy</a></li>
+        <li><a href="products.html?category=grains">Grains & Staples</a></li>
+        <li><a href="products.html?category=eggs-meat">Eggs & Meat</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul>
+        <li><a href="tel:+919876543210"><i class="fas fa-phone" style="margin-right:.4rem;color:var(--green-400)"></i> +91 98765 43210</a></li>
+        <li><a href="mailto:hello@freshmart.in"><i class="fas fa-envelope" style="margin-right:.4rem;color:var(--green-400)"></i> hello@freshmart.in</a></li>
+        <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right:.4rem;color:var(--green-400)"></i> 12, Market Street, Kanyakumari — 629702</a></li>
+        <li><a href="#"><i class="fas fa-clock" style="margin-right:.4rem;color:var(--green-400)"></i> Mon–Sat: 7 AM – 9 PM</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 FreshMart. All rights reserved.</span>
+    <span>Made with ❤️ in Kanyakumari | <a href="#">Privacy Policy</a> · <a href="#">Terms</a></span>
+  </div>
+</footer>
+
+<!-- ── Cart Drawer ── -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <h3><i class="fas fa-shopping-cart" style="margin-right:.4rem;color:var(--primary)"></i> Your Cart</h3>
+    <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cart-items-list">
+    <div class="cart-empty">
+      <i class="fas fa-shopping-basket"></i>
+      <p>Your cart is empty</p>
+      <p style="font-size:.8rem;color:var(--gray-400)">Add some fresh products!</p>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-summary">
+      <div class="cart-summary-row"><span>Subtotal</span><span id="cart-subtotal">₹0</span></div>
+      <div class="cart-summary-row"><span>Delivery</span><span id="cart-delivery">₹40</span></div>
+      <div class="cart-summary-row total"><span>Total</span><span id="cart-total">₹40</span></div>
+    </div>
+    <button class="btn-whatsapp" id="btn-order-whatsapp">
+      <i class="fab fa-whatsapp" style="font-size:1.1rem"></i> Order on WhatsApp
+    </button>
+    <button class="btn-clear-cart" id="btn-clear-cart">Clear Cart</button>
+  </div>
+</div>
+
+<!-- ── WhatsApp Float ── -->
+<div class="wa-float">
+  <div class="wa-tooltip">Chat with us!</div>
+  <a href="#" class="wa-bubble" id="wa-float-btn" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+<!-- Back to Top -->
+<button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>

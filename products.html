@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Products — FreshMart</title>
+  <meta name="description" content="Browse 500+ fresh grocery products at FreshMart. Vegetables, fruits, dairy, grains and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <meta name="theme-color" content="#16a34a">
+  <link rel="icon" href="https://placehold.co/32x32/16a34a/ffffff?text=F" type="image/png">
+</head>
+<body>
+
+<!-- Page Loader -->
+<div id="page-loader">
+  <div class="loader-logo">🛒 FreshMart</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<!-- ── Announcement Bar ── -->
+<div id="announcement-bar">
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>🚚 Free delivery on orders above ₹499</span>
+      <span>🌿 100% Fresh & Organic Products</span>
+      <span>📱 Order on WhatsApp — Instant Confirmation</span>
+      <span>⏰ Same-day delivery before 7 PM</span>
+      <span>🚚 Free delivery on orders above ₹499</span>
+      <span>🌿 100% Fresh & Organic Products</span>
+      <span>📱 Order on WhatsApp — Instant Confirmation</span>
+      <span>⏰ Same-day delivery before 7 PM</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Navbar ── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span>🛒</span> Fresh<span>Mart</span></a>
+    <div class="nav-search">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" class="search-input" placeholder="Search products…">
+      <div class="search-suggestions"></div>
+    </div>
+    <div class="nav-actions">
+      <a href="offers.html" class="nav-btn"><i class="fas fa-tag"></i> Offers</a>
+      <button class="nav-btn cart-btn" data-open-cart>
+        <i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">0</span>
+      </button>
+      <button id="hamburger-btn" class="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden" style="background:#fff;border-top:1px solid #e5e7eb;padding:.75rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;">
+    <a href="index.html" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;"><i class="fas fa-home" style="color:#16a34a;margin-right:.4rem"></i> Home</a>
+    <a href="products.html" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#16a34a;"><i class="fas fa-store" style="color:#16a34a;margin-right:.4rem"></i> Products</a>
+    <a href="offers.html" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;"><i class="fas fa-tag" style="color:#16a34a;margin-right:.4rem"></i> Offers</a>
+    <a href="about.html" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;"><i class="fas fa-info-circle" style="color:#16a34a;margin-right:.4rem"></i> About</a>
+    <a href="contact.html" style="padding:.5rem;font-size:.9rem;font-weight:600;color:#374151;"><i class="fas fa-phone" style="color:#16a34a;margin-right:.4rem"></i> Contact</a>
+  </div>
+  <div class="nav-categories">
+    <ul class="cat-list">
+      <li><a href="products.html?category=vegetables">🥦 Vegetables</a></li>
+      <li><a href="products.html?category=fruits">🍎 Fruits</a></li>
+      <li><a href="products.html?category=dairy">🥛 Dairy</a></li>
+      <li><a href="products.html?category=grains">🌾 Grains & Staples</a></li>
+      <li><a href="products.html?category=beverages">🧃 Beverages</a></li>
+      <li><a href="products.html?category=snacks">🍿 Snacks</a></li>
+      <li><a href="products.html?category=household">🧴 Household</a></li>
+      <li><a href="products.html?category=eggs-meat">🥚 Eggs & Meat</a></li>
+      <li><a href="offers.html" style="color:#fb923c;font-weight:700;">🔥 Offers</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Page Hero ── -->
+<div class="page-hero">
+  <h1>All Products</h1>
+  <p>Fresh, quality groceries at the best prices — delivered to your door.</p>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <span>Products</span>
+  </div>
+</div>
+
+<!-- ── Products Section ── -->
+<section class="section">
+  <div class="container">
+    <!-- Top bar: result count + sort -->
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;flex-wrap:wrap;gap:.75rem;">
+      <p id="result-count" style="font-size:.88rem;color:var(--gray-500);">Showing all products</p>
+      <div style="display:flex;align-items:center;gap:.5rem;">
+        <label for="sort-select" style="font-size:.82rem;color:var(--gray-600);font-weight:600;">Sort:</label>
+        <select id="sort-select" style="padding:.4rem .8rem;border:1.5px solid var(--gray-200);border-radius:var(--radius-sm);font-size:.82rem;outline:none;cursor:pointer;">
+          <option value="default">Default</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating">Best Rated</option>
+          <option value="discount">Biggest Discount</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Filter Pills -->
+    <div class="filter-pills">
+      <button class="filter-pill active" data-filter="all">🛒 All Products</button>
+      <button class="filter-pill" data-filter="vegetables">🥦 Vegetables</button>
+      <button class="filter-pill" data-filter="fruits">🍎 Fruits</button>
+      <button class="filter-pill" data-filter="dairy">🥛 Dairy</button>
+      <button class="filter-pill" data-filter="grains">🌾 Grains</button>
+      <button class="filter-pill" data-filter="beverages">🧃 Beverages</button>
+      <button class="filter-pill" data-filter="snacks">🍿 Snacks</button>
+      <button class="filter-pill" data-filter="household">🧴 Household</button>
+      <button class="filter-pill" data-filter="eggs-meat">🥚 Eggs & Meat</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="products-grid" id="products-grid">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="newsletter-section">
+  <div class="container">
+    <h2>Can't Find What You Need?</h2>
+    <p>Message us on WhatsApp and we'll source it for you or add it to our catalogue.</p>
+    <button onclick="contactOnWhatsApp('Hi FreshMart! I am looking for a product that I cannot find on your website. Can you help?')"
+      style="display:inline-flex;align-items:center;gap:.5rem;background:#25D366;color:#fff;padding:.85rem 2rem;border-radius:2rem;font-weight:700;font-size:.95rem;border:none;cursor:pointer;transition:background .25s;"
+      onmouseover="this.style.background='#1ebe5c'" onmouseout="this.style.background='#25D366'">
+      <i class="fab fa-whatsapp" style="font-size:1.1rem"></i> Message Us on WhatsApp
+    </button>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo"><span>🛒</span> Fresh<span style="color:var(--orange-500)">Mart</span></div>
+      <p>Your neighbourhood supermarket, now online. Fresh groceries delivered same day.</p>
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" onclick="contactOnWhatsApp()"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">All Products</a></li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+919876543210"><i class="fas fa-phone" style="margin-right:.4rem;color:var(--green-400)"></i> +91 98765 43210</a></li>
+        <li><a href="mailto:hello@freshmart.in"><i class="fas fa-envelope" style="margin-right:.4rem;color:var(--green-400)"></i> hello@freshmart.in</a></li>
+        <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right:.4rem;color:var(--green-400)"></i> Kanyakumari — 629702</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 FreshMart. All rights reserved.</span>
+    <span><a href="#">Privacy Policy</a> · <a href="#">Terms</a></span>
+  </div>
+</footer>
+
+<!-- Cart Drawer -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <h3><i class="fas fa-shopping-cart" style="margin-right:.4rem;color:var(--primary)"></i> Your Cart</h3>
+    <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cart-items-list"></div>
+  <div class="cart-footer">
+    <div class="cart-summary">
+      <div class="cart-summary-row"><span>Subtotal</span><span id="cart-subtotal">₹0</span></div>
+      <div class="cart-summary-row"><span>Delivery</span><span id="cart-delivery">₹40</span></div>
+      <div class="cart-summary-row total"><span>Total</span><span id="cart-total">₹40</span></div>
+    </div>
+    <button class="btn-whatsapp" id="btn-order-whatsapp"><i class="fab fa-whatsapp" style="font-size:1.1rem"></i> Order on WhatsApp</button>
+    <button class="btn-clear-cart" id="btn-clear-cart">Clear Cart</button>
+  </div>
+</div>
+
+<!-- WhatsApp Float -->
+<div class="wa-float">
+  <div class="wa-tooltip">Chat with us!</div>
+  <a href="#" class="wa-bubble" id="wa-float-btn"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/main.js"></script>
+<script>
+// Sort integration
+document.getElementById('sort-select')?.addEventListener('change', function() {
+  const pills = document.querySelectorAll('.filter-pill');
+  const activePill = [...pills].find(p => p.classList.contains('active'));
+  const cat = activePill?.dataset.filter || 'all';
+  let filtered = cat === 'all' ? [...PRODUCTS] : PRODUCTS.filter(p => p.category === cat);
+  const val = this.value;
+  if (val === 'price-asc') filtered.sort((a,b) => a.price - b.price);
+  else if (val === 'price-desc') filtered.sort((a,b) => b.price - a.price);
+  else if (val === 'rating') filtered.sort((a,b) => b.rating - a.rating);
+  else if (val === 'discount') filtered.sort((a,b) => (b.mrp-b.price)/b.mrp - (a.mrp-a.price)/a.mrp);
+  renderProducts(filtered);
+  document.getElementById('result-count').textContent = `Showing ${filtered.length} products`;
+});
+
+// Update result count on filter change
+const obs = new MutationObserver(() => {
+  const count = document.querySelectorAll('#products-grid .product-card').length;
+  const el = document.getElementById('result-count');
+  if (el) el.textContent = `Showing ${count} products`;
+});
+setTimeout(() => {
+  const grid = document.getElementById('products-grid');
+  if (grid) obs.observe(grid, { childList: true });
+}, 500);
+</script>
+</body>
+</html>
