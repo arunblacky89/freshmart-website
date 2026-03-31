@@ -1,2 +1,5 @@
+[phases.install]
+cmds = ["npm install"]
+
 [start]
-cmd = "npx serve . -p ${PORT:-3000} -s"
+cmd = "npm start"

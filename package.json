@@ -1,0 +1,11 @@
+{
+  "name": "freshmart-website",
+  "version": "1.0.0",
+  "description": "FreshMart supermarket website with WhatsApp order integration",
+  "scripts": {
+    "start": "serve . -p $PORT -s"
+  },
+  "dependencies": {
+    "serve": "^14.2.3"
+  }
+}
